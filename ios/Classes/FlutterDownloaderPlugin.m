@@ -91,7 +91,7 @@ static BOOL debug = YES;
         NSBundle *mainBundle = [NSBundle mainBundle];
         NSNumber *maxConcurrentTasks = [mainBundle objectForInfoDictionaryKey:@"FDMaximumConcurrentTasks"];
         if (maxConcurrentTasks == nil) {
-            maxConcurrentTasks = @3;
+            maxConcurrentTasks = @1;
         }
         if (debug) {
             NSLog(@"MAXIMUM_CONCURRENT_TASKS = %@", maxConcurrentTasks);

@@ -21,7 +21,7 @@ import androidx.work.impl.WorkManagerInitializer;
 
 public class FlutterDownloaderInitializer extends ContentProvider {
     private final String TAG = "DownloaderInitializer";
-    private final int DEFAULT_MAX_CONCURRENT_TASKS = 3;
+    private final int DEFAULT_MAX_CONCURRENT_TASKS = 1;
 
     @Override
     public boolean onCreate() {
