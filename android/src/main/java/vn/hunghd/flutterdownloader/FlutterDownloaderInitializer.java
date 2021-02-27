@@ -21,7 +21,7 @@ import androidx.work.impl.WorkManagerInitializer;
 
 public class FlutterDownloaderInitializer extends ContentProvider {
     private final String TAG = "DownloaderInitializer";
-    private final int DEFAULT_MAX_CONCURRENT_TASKS = 1;
+    private final int DEFAULT_MAX_CONCURRENT_TASKS = 3;
 
     @Override
     public boolean onCreate() {
@@ -81,9 +81,8 @@ public class FlutterDownloaderInitializer extends ContentProvider {
                     PackageManager.GET_META_DATA);
             Bundle bundle = pi.metaData;
             int max = bundle.getInt("vn.hunghd.flutterdownloader.MAX_CONCURRENT_TASKS", DEFAULT_MAX_CONCURRENT_TASKS);
-//            Log.d(TAG, "MAX_CONCURRENT_TASKS = " + max);
-//            return max;
-            return DEFAULT_MAX_CONCURRENT_TASKS;
+            Log.d(TAG, "MAX_CONCURRENT_TASKS = " + max);
+            return max;
         } catch (PackageManager.NameNotFoundException e) {
             Log.e(TAG, "Failed to load meta-data, NameNotFound: " + e.getMessage());
         } catch (NullPointerException e) {
